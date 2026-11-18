@@ -149,13 +149,14 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 
 /* field notes */
 .notes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.note-card{text-decoration:none;color:inherit;display:block}
+.note-card{text-decoration:none;color:inherit;display:block;scroll-margin-top:96px}
 .note-card .card{padding:0;overflow:hidden;display:flex;flex-direction:column;height:100%}
 .note-card img{width:100%;display:block;aspect-ratio:4/5;object-fit:cover;background:var(--ink3)}
 .note-card .ni{padding:16px 18px;display:flex;flex-direction:column;gap:4px;flex:1}
 .note-card .ni .sub{color:var(--mint);font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
 .note-card .ni p{color:var(--mut);font-size:15px;line-height:1.35}
 .note-card .ni .open{margin-top:auto;padding-top:10px;font-size:13px;font-weight:700;color:var(--coral)}
+.note-card:target .card{border-color:var(--mint);box-shadow:0 0 0 3px rgba(94,224,192,.28)}
 
 /* can do */
 .cando{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
@@ -396,8 +397,8 @@ const NOTES=[
  ["Manufacturing","Manufacturing","Where does margin leak on the factory floor?"],
  ["OTA","Travel platforms","Reading a travel platform: bookings are not revenue."]
 ];
-document.getElementById('notesGrid').innerHTML=NOTES.map(([f,s,d])=>`<a class="note-card reveal" href="notes/${f}.jpg" target="_blank" rel="noopener"><div class="card"><img src="notes/${f}.jpg" alt="${s} finance one-pager" loading="lazy"><div class="ni"><span class="sub">${s}</span><p>${d}</p><span class="open">View full-size →</span></div></div></a>`).join('');
-document.getElementById('navNotes').innerHTML=NOTES.map(([f,s])=>`<a href="notes/${f}.jpg" target="_blank" rel="noopener">${s}</a>`).join('');
+document.getElementById('notesGrid').innerHTML=NOTES.map(([f,s,d])=>`<a class="note-card reveal" id="note-${f}" href="notes/${f}.jpg" target="_blank" rel="noopener"><div class="card"><img src="notes/${f}.jpg" alt="${s} finance one-pager" loading="lazy"><div class="ni"><span class="sub">${s}</span><p>${d}</p><span class="open">View full-size →</span></div></div></a>`).join('');
+document.getElementById('navNotes').innerHTML=NOTES.map(([f,s])=>`<a href="#note-${f}">${s}</a>`).join('');
 
 const nodes=document.getElementById('nodes'), stage=document.getElementById('stage'), fill=document.getElementById('fill');
 nodes.innerHTML=ST.map((s,i)=>`<button class="node" role="tab" data-i="${i}" aria-label="Stage ${i+1}: ${s[2]}"><span class="dot"></span>${s[0]}</button>`).join('');
