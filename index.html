@@ -52,6 +52,14 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .navlinks{display:flex;gap:26px;font-size:14px;font-weight:600}
 .navlinks a{text-decoration:none;color:var(--mut);transition:color .2s}
 .navlinks a:hover{color:var(--cream)}
+.nav-drop{position:relative}
+.nav-drop>a{display:inline-flex;align-items:center;gap:5px}
+.nav-drop>a .car{font-size:10px;transition:transform .15s}
+.nav-drop:hover>a .car,.nav-drop:focus-within>a .car{transform:rotate(180deg)}
+.nav-drop-panel{position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%) translateY(6px);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .15s ease,transform .15s ease;background:var(--ink2);border:1.5px solid var(--line);border-radius:14px;padding:8px;display:flex;flex-direction:column;gap:1px;min-width:200px;box-shadow:0 20px 44px rgba(0,0,0,.4);z-index:20}
+.nav-drop:hover .nav-drop-panel,.nav-drop:focus-within .nav-drop-panel{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+.nav-drop-panel a{padding:9px 12px;border-radius:9px;font-size:13.5px;font-weight:600;color:var(--mut);text-decoration:none;white-space:nowrap}
+.nav-drop-panel a:hover{background:var(--ink3);color:var(--mint)}
 .btn{display:inline-flex;align-items:center;gap:10px;padding:13px 22px;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .15s,background .2s,border-color .2s;font-family:inherit}
 .btn:hover{transform:translateY(-1px)}
 .btn.primary{background:var(--mint);color:var(--ink)}
@@ -192,7 +200,9 @@ footer{padding:36px 0 50px;color:var(--mut);font-size:14px;border-top:1px solid 
   <div class="wrap">
     <a class="brand" href="#top">Shubhi Singhal<span>.</span></a>
     <div class="navlinks">
-      <a href="#video">Video</a><a href="#journey">The journey</a><a href="#companies">Experience</a><a href="#help">How I help</a><a href="#notes">Cheat sheets</a><a href="#contact">Contact</a>
+      <a href="#video">Video</a><a href="#journey">The journey</a><a href="#companies">Experience</a><a href="#help">How I help</a>
+      <div class="nav-drop"><a href="#notes">Cheat sheets <span class="car">▾</span></a><div class="nav-drop-panel" id="navNotes"></div></div>
+      <a href="#contact">Contact</a>
     </div>
     <span style="display:flex;gap:8px"><a class="btn ghost sm" href="Shubhi_Singhal_CV.pdf" target="_blank" rel="noopener">CV</a><a class="btn primary sm" href="#contact">Let's talk</a></span>
   </div>
@@ -387,6 +397,7 @@ const NOTES=[
  ["OTA","Travel platforms","Reading a travel platform: bookings are not revenue."]
 ];
 document.getElementById('notesGrid').innerHTML=NOTES.map(([f,s,d])=>`<a class="note-card reveal" href="notes/${f}.jpg" target="_blank" rel="noopener"><div class="card"><img src="notes/${f}.jpg" alt="${s} finance one-pager" loading="lazy"><div class="ni"><span class="sub">${s}</span><p>${d}</p><span class="open">View full-size →</span></div></div></a>`).join('');
+document.getElementById('navNotes').innerHTML=NOTES.map(([f,s])=>`<a href="notes/${f}.jpg" target="_blank" rel="noopener">${s}</a>`).join('');
 
 const nodes=document.getElementById('nodes'), stage=document.getElementById('stage'), fill=document.getElementById('fill');
 nodes.innerHTML=ST.map((s,i)=>`<button class="node" role="tab" data-i="${i}" aria-label="Stage ${i+1}: ${s[2]}"><span class="dot"></span>${s[0]}</button>`).join('');
