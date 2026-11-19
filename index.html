@@ -17,7 +17,7 @@
 <meta name="twitter:description" content="I help businesses grow, from the first idea to investor-ready numbers. Hands-on at every stage, with finance at the core and AI built in.">
 <meta name="twitter:image" content="https://shubhi-singhal.netlify.app/poster.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
 <style>
 :root{
   --ink:#0F1B2D; --ink2:#17283F; --ink3:#1D3150; --line:#2A4060; --cream:#F5F0E8;
@@ -52,16 +52,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .navlinks{display:flex;gap:26px;font-size:14px;font-weight:600}
 .navlinks a{text-decoration:none;color:var(--mut);transition:color .2s}
 .navlinks a:hover{color:var(--cream)}
-.nav-drop{position:relative}
-.nav-drop>a{display:inline-flex;align-items:center;gap:5px}
-.nav-drop>a .car{font-size:10px;transition:transform .15s}
-.nav-drop:hover>a .car,.nav-drop:focus-within>a .car{transform:rotate(180deg)}
-.nav-drop-panel{position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%) translateY(6px);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .15s ease,transform .15s ease;background:var(--ink2);border:1.5px solid var(--line);border-radius:14px;padding:8px;display:flex;flex-direction:column;gap:1px;min-width:200px;box-shadow:0 20px 44px rgba(0,0,0,.4);z-index:20}
-.nav-drop:hover .nav-drop-panel,.nav-drop:focus-within .nav-drop-panel{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0)}
-.nav-drop-panel::before{content:'';position:absolute;left:0;right:0;top:-34px;height:34px}
-.nav-drop.open .nav-drop-panel{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0)}
-.nav-drop-panel a{padding:9px 12px;border-radius:9px;font-size:13.5px;font-weight:600;color:var(--mut);text-decoration:none;white-space:nowrap}
-.nav-drop-panel a:hover{background:var(--ink3);color:var(--mint)}
+.navlinks a.on{color:var(--mint)}
 .btn{display:inline-flex;align-items:center;gap:10px;padding:13px 22px;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .15s,background .2s,border-color .2s;font-family:inherit}
 .btn:hover{transform:translateY(-1px)}
 .btn.primary{background:var(--mint);color:var(--ink)}
@@ -186,9 +177,7 @@ footer{padding:36px 0 50px;color:var(--mut);font-size:14px;border-top:1px solid 
   .photo{order:-1;width:min(80%,340px)}
   .cos,.cando,.notes-grid{grid-template-columns:1fr 1fr}
   .navlinks>a{display:none}
-  .nav-drop-panel{left:auto;right:-60px;transform:translateY(6px)}
-  .nav-drop:hover .nav-drop-panel,.nav-drop:focus-within .nav-drop-panel,.nav-drop.open .nav-drop-panel{transform:translateY(0)}
-}
+    }
 @media (max-width:620px){
   section{padding:68px 0}
   nav .btn.ghost{display:none}
@@ -198,6 +187,107 @@ footer{padding:36px 0 50px;color:var(--mut);font-size:14px;border-top:1px solid 
   .bul li{font-size:16px}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ---- restructure additions ---- */
+.open-pill{display:inline-flex;align-items:center;gap:10px;background:var(--ink2);border:1.5px solid var(--line);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600;margin:0 0 22px}
+.open-pill i{width:9px;height:9px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 5px rgba(94,224,192,.18)}
+.hero{padding:56px 0 56px}
+.hero p.lead{margin:18px 0 28px}
+.proof{padding:0 0 24px}
+.proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.pnum{background:var(--ink2);border:1.5px solid var(--line);border-radius:18px;padding:18px 20px}
+.pnum b{display:block;font-size:38px;font-weight:800;color:var(--mint);line-height:1.05;letter-spacing:-.01em}
+.pnum span{display:block;font-weight:600;margin-top:4px}
+.pnum small{color:var(--mut);font-size:13px}
+.logos{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:22px}
+.logos .lab{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin-right:6px}
+.sec-tight{padding:72px 0}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.tab{background:var(--ink2);border:1.5px solid var(--line);color:var(--mut);font-family:inherit;font-weight:700;font-size:14px;padding:9px 16px;border-radius:999px;cursor:pointer;transition:all .15s}
+.tab:hover{border-color:var(--mint);color:var(--cream)}
+.tab.on{background:var(--mint);border-color:var(--mint);color:var(--ink)}
+.viewer{display:grid;grid-template-columns:minmax(0,440px) 1fr;gap:44px;align-items:center}
+.viewer img{width:100%;display:block;border-radius:18px;border:1.5px solid var(--line);box-shadow:0 30px 60px rgba(0,0,0,.35);aspect-ratio:4/5;object-fit:cover;background:var(--ink3)}
+.viewer .vt{display:flex;flex-direction:column;gap:16px}
+.viewer .vt h3{font-size:clamp(26px,3.2vw,38px)}
+.viewer .vt p{color:var(--mut);font-size:19px}
+.viewer ul{list-style:none;display:grid;gap:10px}
+.viewer li{position:relative;padding-left:22px;font-size:17px}
+.viewer li::before{content:"";position:absolute;left:0;top:9px;width:9px;height:9px;border-radius:50%;background:var(--coral)}
+.help-link{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
+.band{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;background:linear-gradient(135deg,var(--ink3),var(--ink2));border:1.5px solid var(--line);border-radius:var(--r);padding:30px 34px;margin-bottom:34px}
+.band h3{font-size:clamp(22px,2.6vw,30px);max-width:640px}
+@media (max-width:960px){
+  nav .wrap{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:8px}
+  .navlinks{display:flex!important;order:3;width:100%;overflow-x:auto;gap:15px;font-size:13px;padding:4px 0 6px;white-space:nowrap}
+  .navlinks>a{display:inline!important}
+  .proof-grid{grid-template-columns:1fr 1fr}
+  .viewer{grid-template-columns:1fr}
+  .viewer img{max-width:420px}
+}
+@media (max-width:620px){ .sec-tight{padding:56px 0} .proof-grid{gap:10px} .pnum b{font-size:30px} .tab{padding:8px 13px;font-size:13px} nav .btn.ghost{display:none} }
+
+
+.topband{padding:22px 0 0}
+.topband .band{margin:0;padding:16px 24px;border-color:var(--mint)}
+.topband .band h3{font-size:clamp(17px,2vw,21px);max-width:none}
+.topband .btn{padding:10px 20px}
+.hero{padding-top:36px}
+/* fonts */
+:root{--fh:'Fraunces';--fb:'Inter'}
+body{font-family:var(--fb),system-ui,sans-serif}
+h1,h2,h3,.brand,.pnum b,.stat b,.costat,.stage-num b{font-weight:700;letter-spacing:-.01em;font-family:var(--fh),var(--fb),system-ui,sans-serif}
+
+.st-tabs{display:inline-flex;background:var(--ink2);border:1.5px solid var(--line);border-radius:999px;padding:5px;margin-bottom:30px;flex-wrap:wrap}
+.st-tab{font:700 15px Inter,sans-serif;color:var(--mut);background:none;border:0;border-radius:999px;padding:11px 22px;cursor:pointer;transition:all .15s}
+.st-tab.on{background:var(--mint);color:var(--ink)}
+.st-panel{display:none}.st-panel.on{display:block;animation:fade .4s ease both}
+.roles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.role{display:flex;flex-direction:column;gap:10px}
+.role .k{font-size:12px;letter-spacing:.12em;font-weight:800;color:var(--coral)}
+.role h3{font-size:22px}
+.role p{color:var(--mut);font-size:16px}
+.role .ev{margin-top:auto;padding-top:12px;border-top:1px solid var(--line);font-size:14px;color:var(--cream)}
+.role .ev b{color:var(--mint)}
+.fin-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.fin-col{display:flex;flex-direction:column;gap:12px}
+.fin-col .stg{font-size:12px;letter-spacing:.12em;font-weight:800;color:var(--mint)}
+.fin-col h3{font-size:22px}
+.fin-col ul{list-style:none;display:grid;gap:9px}
+.fin-col li{position:relative;padding-left:20px;font-size:16px}
+.fin-col li::before{content:"";position:absolute;left:0;top:9px;width:8px;height:8px;border-radius:50%;background:var(--coral)}
+.st-cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:26px}
+.st-cta span{color:var(--mut)}
+@media (max-width:960px){.roles,.fin-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.roles,.fin-grid{grid-template-columns:1fr}.st-tab{padding:10px 16px;font-size:14px}}
+
+.ico{display:inline-flex;width:48px;height:48px;border-radius:14px;align-items:center;justify-content:center;background:rgba(94,224,192,.12);color:var(--mint);border:1px solid rgba(94,224,192,.25);flex:none}
+.ico svg{width:26px;height:26px}
+.role:nth-child(even) .ico,.cando .card:nth-child(even) .ico{background:rgba(255,127,92,.12);color:var(--coral);border-color:rgba(255,127,92,.3)}
+.card:hover .ico{transform:translateY(-2px);transition:transform .2s}
+.photo .gcard{position:absolute;right:-22px;bottom:-100px;width:190px;background:var(--ink2);border:1.5px solid var(--line);border-radius:16px;padding:12px 14px;box-shadow:0 12px 30px rgba(0,0,0,.35)}
+.gcard .gl{font-size:12px;font-weight:700;color:var(--mut);letter-spacing:.04em;margin-bottom:6px}
+.gcard svg{width:100%;display:block}
+@media (max-width:620px){.photo .gcard{right:-6px;bottom:-84px;width:150px}}
+
+
+.proof-head{margin:8px 0 22px}
+.proof-head h2{font-size:30px;margin-top:6px}
+.pnum em{display:block;font-style:normal;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--coral);margin-bottom:10px}
+.pnum small{display:block;margin-top:8px;line-height:1.45}
+.logos .lab{white-space:nowrap}
+
+.edu-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:18px;align-items:start}
+.edu-card{display:flex;flex-direction:column;gap:16px}
+.edu-top{display:flex;gap:16px;align-items:center}
+.edu-top .edu-logo{width:56px;height:56px;margin:0;flex:none}.edu-top .edu-logo img{max-width:46px;max-height:46px}
+.edu-top h3{font-size:24px}
+.edu-lab{font-size:12px;letter-spacing:.12em;font-weight:800;color:var(--coral);text-transform:uppercase;margin-top:4px}
+.proj{list-style:none;display:grid;gap:14px}
+.proj li{position:relative;padding-left:20px;display:grid;gap:3px}
+.proj li::before{content:"";position:absolute;left:0;top:8px;width:8px;height:8px;border-radius:50%;background:var(--mint)}
+.proj b{font-size:17px}.proj span{color:var(--mut);font-size:16px}
+@media (max-width:960px){.edu-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -206,28 +296,25 @@ footer{padding:36px 0 50px;color:var(--mut);font-size:14px;border-top:1px solid 
   <div class="wrap">
     <a class="brand" href="#top">Shubhi Singhal<span>.</span></a>
     <div class="navlinks">
-      <a href="#video">Video</a><a href="#journey">The journey</a><a href="#companies">Experience</a><a href="#help">How I help</a>
-      <div class="nav-drop"><a href="#notes">Cheat sheets <span class="car">▾</span></a><div class="nav-drop-panel" id="navNotes"></div></div>
-      <a href="#contact">Contact</a>
+      <a href="#startups">For startups</a><a href="#companies">Experience</a><a href="#story">My story</a><a href="#notes">Cheat sheets</a><a href="#education">Education</a><a href="#contact">Contact</a>
     </div>
     <span style="display:flex;gap:8px"><a class="btn ghost sm" href="Shubhi_Singhal_CV.pdf" target="_blank" rel="noopener">CV</a><a class="btn primary sm" href="#contact">Let's talk</a></span>
   </div>
 </nav>
 
 <main id="top">
-  <!-- HERO -->
+  <section class="topband"><div class="wrap"><div class="band"><h3>Hiring for a finance or business role at a startup or scale-up? Let's talk.</h3><a class="btn primary" href="mailto:shubhisinghal14@gmail.com?subject=Let%27s%20talk%20%E2%80%94%20finance%2Fbusiness%20role&body=Hi%20Shubhi%2C%0A%0A">Email me</a></div></div></section>
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
+        <div class="open-pill"><i></i>Open to finance &amp; business roles · UK startups and scale-ups</div>
         <p class="eyebrow">Commercial finance &amp; business building · London</p>
         <h1 style="margin-top:14px">Shubhi Singhal</h1>
         <p class="lead">I help businesses grow, from the first idea to investor-ready numbers. Hands-on at every stage, with finance at the core and AI built in.</p>
-        <p class="eyebrow coral">How I can help your business</p>
-        <div class="helps" id="helps"></div>
         <div class="cta">
-          <a class="btn primary" href="#video">▶&nbsp; Watch the 60-second story</a>
-          <a class="btn ghost" href="#journey">Explore the journey</a>
-          <a class="btn ghost" href="Shubhi_Singhal_CV.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
+          <a class="btn primary" href="#contact">Let's talk</a>
+          <a class="btn ghost" href="#story">▶&nbsp; Watch the 60-second story</a>
+          <a class="btn ghost" href="Shubhi_Singhal_CV.pdf" target="_blank" rel="noopener">Download CV</a>
         </div>
       </div>
       <div class="photo">
@@ -237,101 +324,127 @@ footer{padding:36px 0 50px;color:var(--mut);font-size:14px;border-top:1px solid 
     </div>
   </section>
 
-  <!-- VIDEO -->
-  <section id="video" style="padding-top:20px">
+  <section class="proof">
     <div class="wrap">
-      <div class="sec-head reveal">
-        <p class="eyebrow">The 60-second story</p>
-        <h2>How a business runs, end to end, and where I've been hands-on.</h2>
+      <div class="proof-head reveal"><p class="eyebrow">Results from my roles</p><h2>What I have delivered so far</h2></div>
+      <div class="proof-grid">
+        <div class="pnum reveal"><em>Sedex · 2024–26</em><b>43%</b><span>faster commission payout, automated</span><small>Automated with AI-dashboards and commission analysis: processing cut from working day 7 to 4 across 5 policies, for 35+ sales colleagues.</small></div>
+        <div class="pnum reveal"><em>MakeMyTrip · 2022–23</em><b>60%</b><span>of the business covered</span><small>Finance partner to the top four business lines of a NASDAQ-listed travel group.</small></div>
+        <div class="pnum reveal"><em>Cargill · 2019–22</em><b>95%</b><span>of Year 1 target hit</span><small>Co-built a new chocolate product line, during COVID disruption.</small></div>
+        <div class="pnum reveal"><em>Cargill · 2019–22</em><b>25%</b><span>lower cost base</span><small>Set up third-party manufacturing, leveraging the existing supply chain.</small></div>
       </div>
-      <div class="video-card reveal">
-        <video controls preload="metadata" poster="poster.jpg" playsinline>
-          <source src="journey.mp4" type="video/mp4">
-        </video>
-      </div>
-    </div>
-  </section>
-
-  <!-- JOURNEY -->
-  <section id="journey">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <p class="eyebrow">Idea to exit · interactive</p>
-        <h2>Nine stages of building a business. Click any stage to see what I delivered.</h2>
-      </div>
-      <div class="reveal" style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:36px">
-        <div class="logo-tile"><img src="logo-vo.png" alt="Valueonshore" style="max-height:28px"></div>
+      <div class="logos reveal"><span class="lab">Worked with</span>
         <div class="logo-tile"><img src="logo-cargill.png" alt="Cargill" style="max-height:32px"></div>
         <div class="logo-tile"><img src="logo-mmt.png" alt="MakeMyTrip" style="max-height:32px"></div>
         <div class="logo-tile"><img src="logo-sedex.png" alt="Sedex" style="max-height:30px"></div>
-      </div>
-      <div class="track reveal">
-        <div class="track-line"></div><div class="track-fill" id="fill"></div>
-        <div class="nodes" id="nodes" role="tablist" aria-label="Stages"></div>
-      </div>
-      <div class="stage" id="stage" aria-live="polite"></div>
-      <div class="stage-ctrl">
-        <button class="btn ghost sm" id="prev">← Previous</button>
-        <button class="btn ghost sm" id="next">Next →</button>
-        <button class="btn primary sm" id="play">▶ Play the journey</button>
+        <div class="logo-tile"><img src="logo-vo.png" alt="Valueonshore" style="max-height:28px"></div>
       </div>
     </div>
   </section>
 
-  <!-- COMPANIES -->
-  <section id="companies">
+  <section id="startups" class="sec-tight">
     <div class="wrap">
-      <div class="sec-head reveal">
-        <p class="eyebrow">One journey, four companies</p>
-        <h2>Learn it. Build it. Scale it. Automate it.</h2>
+      <div class="sec-head reveal"><p class="eyebrow coral">For startups</p><h2>One hire that covers the gaps. Or finance, done properly.</h2>
+        <p class="mut" style="font-size:18px">Early teams rarely have a finance team, a pricing lead and an ops person. I can cover several of those jobs, or go deep on finance alone.</p></div>
+      <div class="st-tabs reveal" role="tablist"><button class="st-tab on" data-t="multi">Multiple roles</button><button class="st-tab" data-t="fin">Finance expertise</button></div>
+
+      <div class="st-panel on" id="p-multi">
+        <div class="roles">
+          <div class="card role"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><div class="k">ROLE 1</div><h3>Finance lead</h3><p>Own the P&amp;L, budgets and forecasts, with a monthly view leadership can trust.</p><div class="ev"><b>Done:</b> full P&amp;L for a new business, monthly variance reviews</div></div>
+          <div class="card role"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.2"/></svg></span><div class="k">ROLE 2</div><h3>Commercial and pricing</h3><p>Set pricing, test it, and design sales incentives that reward the right deals.</p><div class="ev"><b>Done:</b> pricing across 8 cities, commission plans for 35+ sales colleagues</div></div>
+          <div class="card role"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg></span><div class="k">ROLE 3</div><h3>Strategy and go-to-market</h3><p>Pick the target market, segment customers and plan the launch.</p><div class="ev"><b>Done:</b> market and segment work, go-to-market plan, distributor onboarding</div></div>
+          <div class="card role"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></svg></span><div class="k">ROLE 4</div><h3>Business operations</h3><p>Turn the plan into process: SOPs, hiring plans and systems that scale.</p><div class="ev"><b>Done:</b> 10+ SOPs, 6 hires planned, SAP set up on the business side</div></div>
+          <div class="card role"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></span><div class="k">ROLE 5</div><h3>Automation and AI</h3><p>Replace manual reporting with dashboards that show today's numbers.</p><div class="ev"><b>Done:</b> AI dashboards and analysis for Sales and Finance heads</div></div>
+          <div class="card role" style="justify-content:center;border-color:var(--mint)"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></svg></span><h3>Need a mix?</h3><p>Tell me which gaps your team has and I'll say which of these I can take on first.</p><a class="btn primary" style="align-self:flex-start" href="#contact">Let's talk</a></div>
+        </div>
       </div>
-      <div class="cos" id="cos"></div>
-      <div class="edu reveal"><span class="eyebrow" style="color:var(--mut)">Education</span><span class="e"><span class="edu-logo"><img src="logo-bath.png" alt="University of Bath"></span><span><b>MBA</b>, University of Bath, UK</span></span><span class="e"><span class="edu-logo"><img src="logo-icai.png" alt="ICAI"></span><span><b>Chartered Accountancy (ICAI)</b>, part-qualified</span></span></div>
+
+      <div class="st-panel" id="p-fin">
+        <div class="fin-grid">
+          <div class="card fin-col"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V10l7-6 7 6v11M9 21v-6h6v6"/></svg></span><div class="stg">FOUNDATIONS</div><h3>Get the numbers in place</h3><ul><li>Financial model and five-year business case</li><li>Budget and forecast the team can rely on</li><li>Monthly reporting and variance reviews</li></ul></div>
+          <div class="card fin-col"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span><div class="stg">GROWTH</div><h3>Know what makes money</h3><ul><li>Pricing simulations across customer segments and markets</li><li>ARR, retention and churn tracking</li><li>Commission and incentive plans, with monthly ROI review</li></ul></div>
+          <div class="card fin-col"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21V8M12 8l-5 5M12 8l5 5M5 3h14"/></svg></span><div class="stg">RAISE AND EXIT</div><h3>Be investor-ready</h3><ul><li>Investor call analysis</li><li>Due diligence materials</li><li>Acquisition and market-entry cases</li></ul></div>
+        </div>
+        <div class="st-cta"><a class="btn primary" href="#contact">Talk about a finance role</a><a class="btn ghost" href="#notes">See the sector cheat sheets</a><span>Built across SaaS, travel tech, manufacturing and agribusiness.</span></div>
+      </div>
     </div>
   </section>
 
-  <!-- CAN DO -->
-  <section id="help">
+  <section id="help" class="sec-tight">
     <div class="wrap">
-      <div class="sec-head reveal">
-        <p class="eyebrow">What I can do for your business</p>
-        <h2>What I would do for you.</h2>
-      </div>
+      <div class="sec-head reveal"><p class="eyebrow">What I do</p><h2>Four things I would do for your business.</h2></div>
       <div class="cando" id="cando"></div>
     </div>
   </section>
 
-  <!-- FIELD NOTES -->
-  <section id="notes">
+  <section id="companies" class="sec-tight">
     <div class="wrap">
-      <div class="sec-head reveal">
-        <p class="eyebrow coral">Sector cheat sheets · one-pagers</p>
-        <h2>8 numbers that explain any sector, fast.</h2>
-        <p class="mut" style="font-size:18px">Short, sector-specific finance cheat-sheets — the metrics that actually tell you if a business is healthy, and where finance moves them. Click any card for the full-size version.</p>
-      </div>
-      <div class="notes-grid" id="notesGrid"></div>
+      <div class="sec-head reveal"><p class="eyebrow">Experience</p><h2>Learn it. Build it. Scale it. Automate it.</h2></div>
+      <div class="cos" id="cos"></div>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="contact">
-    <div class="wrap contact-grid">
-      <div class="reveal">
-        <p class="eyebrow">Let's talk</p>
-        <h2 style="margin:12px 0 16px">Hands-on at every stage of building a business.</h2>
-        <p class="mut" style="font-size:19px">Commercial finance and business building, with AI and automation built in. Open to finance and business roles at UK startups and scale-ups.</p>
+
+  <section id="story" class="sec-tight">
+    <div class="wrap">
+      <div class="sec-head reveal"><p class="eyebrow">My story</p><h2>How a business runs, end to end, and where I've been hands-on.</h2></div>
+      <div class="video-card reveal">
+        <video controls preload="metadata" poster="poster.jpg" playsinline><source src="journey.mp4" type="video/mp4"></video>
       </div>
-      <div class="lines reveal">
-        <div class="cline"><div><div class="lbl">Email</div><a href="mailto:shubhisinghal14@gmail.com?subject=Let%27s%20talk%20%E2%80%94%20finance%2Fbusiness%20role&body=Hi%20Shubhi%2C%0A%0A">shubhisinghal14@gmail.com</a></div><button class="copy" data-copy="shubhisinghal14@gmail.com">Copy</button></div>
-        <div class="cline"><div><div class="lbl">LinkedIn</div><a href="https://www.linkedin.com/in/shubhi14" target="_blank" rel="noopener">linkedin.com/in/shubhi14</a></div><button class="copy" data-copy="https://www.linkedin.com/in/shubhi14">Copy</button></div>
-        <div class="cline"><div><div class="lbl">CV</div><a href="Shubhi_Singhal_CV.pdf" target="_blank" rel="noopener">Download my CV (PDF)</a></div></div>
-        <div class="cline"><div><div class="lbl">Phone</div><a href="tel:+447570123236">+44 (0)7570 123236</a></div><button class="copy" data-copy="+447570123236">Copy</button></div>
+      <div class="sec-head reveal" style="margin:64px 0 28px"><p class="eyebrow coral">Idea to exit · interactive</p><h3 style="font-size:clamp(24px,3vw,34px)">Nine stages of building a business. Click any stage to see what I delivered.</h3></div>
+      <div class="track reveal"><div class="track-line"></div><div class="track-fill" id="fill"></div><div class="nodes" id="nodes" role="tablist" aria-label="Stages"></div></div>
+      <div class="stage" id="stage" aria-live="polite"></div>
+      <div class="stage-ctrl">
+        <button class="btn ghost sm" id="prev">← Previous</button><button class="btn ghost sm" id="next">Next →</button><button class="btn primary sm" id="play">▶ Play the journey</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="notes" class="sec-tight">
+    <div class="wrap">
+      <div class="sec-head reveal"><p class="eyebrow coral">Sector cheat sheets</p><h2>8 numbers that explain any sector, fast.</h2></div>
+      <div class="tabs" id="tabs" role="tablist"></div>
+      <div class="viewer" id="viewer"></div>
+    </div>
+  </section>
+
+  <section id="education" class="sec-tight">
+    <div class="wrap">
+      <div class="sec-head reveal"><p class="eyebrow">Education</p><h2>Trained in accountancy, sharpened by an MBA.</h2></div>
+      <div class="edu-grid">
+        <div class="card edu-card reveal">
+          <div class="edu-top"><span class="edu-logo"><img src="logo-bath.png" alt="University of Bath"></span><div><h3>MBA</h3><p class="mut">University of Bath, UK</p></div></div>
+          <p class="edu-lab">MBA projects</p>
+          <ul class="proj">
+            <li><b>Consulting Project</b><span>Created a targeted research strategy to gather key insights, supporting a company in developing a digital learning platform for professionals.</span></li>
+            <li><b>Change in Action Project</b><span>Analysed and developed a change transformation plan for the client Carnall Farrar, UK.</span></li>
+            <li><b>Entrepreneurship in Action Project</b><span>Developed the business plan, projections and go-to-market strategy for a tech start-up idea and pitched it to an investor panel. Won "Best Business Idea" and "Most Innovative Business Idea".</span></li>
+            <li><b>Integrated Project</b><span>Developed a plan for a consultancy's expansion and market visibility within the AUKUS framework.</span></li>
+          </ul>
+        </div>
+        <div class="card edu-card reveal">
+          <div class="edu-top"><span class="edu-logo"><img src="logo-icai.png" alt="ICAI"></span><div><h3>Chartered Accountancy</h3><p class="mut">ICAI, part-qualified</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact sec-tight">
+    <div class="wrap">
+      
+      <div class="contact-grid">
+        <div class="reveal"><p class="eyebrow">Get in touch</p><h2 style="margin:12px 0 16px">Hands-on at every stage of building a business.</h2><p class="mut" style="font-size:19px">Commercial finance and business building, with AI and automation built in.</p></div>
+        <div class="lines reveal">
+          <div class="cline"><div><div class="lbl">Email</div><a href="mailto:shubhisinghal14@gmail.com">shubhisinghal14@gmail.com</a></div><button class="copy" data-copy="shubhisinghal14@gmail.com">Copy</button></div>
+          <div class="cline"><div><div class="lbl">LinkedIn</div><a href="https://www.linkedin.com/in/shubhi14" target="_blank" rel="noopener">linkedin.com/in/shubhi14</a></div><button class="copy" data-copy="https://www.linkedin.com/in/shubhi14">Copy</button></div>
+          <div class="cline"><div><div class="lbl">CV</div><a href="Shubhi_Singhal_CV.pdf" target="_blank" rel="noopener">Download my CV (PDF)</a></div></div>
+          <div class="cline"><div><div class="lbl">Phone</div><a href="tel:+447570123236">+44 (0)7570 123236</a></div><button class="copy" data-copy="+447570123236">Copy</button></div>
+        </div>
       </div>
     </div>
   </section>
 </main>
 <footer><div class="wrap">Shubhi Singhal · London, UK</div></footer>
-
 <script>
 const H=s=>s.replace(/\*(.+?)\*/g,'<span class="hl">$1</span>');
 const ICON={
@@ -369,7 +482,7 @@ const ST=[
 const LG=["vo","cargill","mmt","sedex"]; const BB=["B2B","B2B","B2C","B2B"];
 const STAT=[["4","customer segments","identified and sized"],["$3.8M→$16M","revenue, Year 1 to Year 5","in the business case"],
  ["15+","SKUs priced","across 8 different cities"],["25%","lower cost base","by leveraging the existing supply chain"],
- ["15+","distributors onboarded","and 200+ bakers trained"],["43%","faster commission payout","for 35 sales colleagues"],
+ ["15+","distributors onboarded","and 200+ bakers trained"],["43%","faster commission payout","for 35+ sales colleagues"],
  ["10+","SOPs written","and 6 hires planned"],["95%","of Year 1 target","during COVID disruption"],["$6Bn","group valuation","supported on investor calls"]];
 function statHTML(i){const [n,a,b]=STAT[i];
   const num=n.includes('→')?`<span class="from">${n.split('→')[0]}</span><span class="arr">→</span><span class="cu" data-v="${n.split('→')[1]}">${n.split('→')[1]}</span>`:`<span class="cu" data-v="${n}">${n}</span>`;
@@ -381,14 +494,14 @@ const CO=[["2016–2019","Valueonshore","Audit & risk advisory","*Audit and risk
  ["2019–2022","Cargill","Agribusiness · chocolate manufacturing","*Co-built the product line,* hitting *95% of the Year 1 target* during COVID disruption."],
  ["2022–2023","MakeMyTrip","NASDAQ · USD 6Bn valuation","Finance business partner to the *top four business lines,* contributing *60%* of the business."],
  ["2024–2026","Sedex","SaaS · £1Bn valuation","*FP&A,* automating finance with *AI dashboards* and analysis."]];
+const CANI=[`<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/>`,`<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>`,`<path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/>`,`<path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/>`];
 const CAN=[["Go to market","Find your market","Spot the *target market,* segment customers and shape the *go-to-market plan.*"],
  ["Plan","Model the business","*Financial models, business cases* and *pricing simulations.*"],
  ["Run","Run the numbers","Own the *P&L, budgets, forecasts* and *sales incentive plans.*"],
  ["Automate","Automate finance","*AI dashboards* and analysis, so decisions use *today's numbers.*"]];
 
-document.getElementById('helps').innerHTML=HELP.map(([i,h,s])=>`<div class="help"><div class="ico">${ICON[i]}</div><div><b>${h}</b><small>${s}</small></div></div>`).join('');
-document.getElementById('cos').innerHTML=CO.map(([y,n,s,d],k)=>`<div class="co reveal${k==3?' now':''}"><div class="yr">${y}<span class="bb${BB[k]=='B2C'?' c':''}">${BB[k]}</span></div><div class="card"><div class="logo-tile">${k==0?'<img src="logo-vo.png" alt="" style="max-height:32px"><span>Valueonshore</span>':`<img src="logo-${LG[k]}.png" alt="${n}"${k==3?' style="max-height:30px"':''}>`}</div><div class="sub">${s}</div>${k==2?'<div class="costat">60%</div><p>of the business, across the top four business lines</p><span class="copill">USD 10Bn gross bookings</span>':`<p>${H(d)}</p>`}</div></div>`).join('');
-document.getElementById('cando').innerHTML=CAN.map(([k,h,d])=>`<div class="card reveal"><div class="k">${k.toUpperCase()}</div><h3>${h}</h3><p>${H(d)}</p></div>`).join('');
+document.getElementById('cos').innerHTML=CO.map((r,i)=>[...r,i]).reverse().map(([y,n,s,d,k])=>`<div class="co reveal${k==3?' now':''}"><div class="yr">${y}<span class="bb${BB[k]=='B2C'?' c':''}">${BB[k]}</span></div><div class="card"><div class="logo-tile">${k==0?'<img src="logo-vo.png" alt="" style="max-height:32px"><span>Valueonshore</span>':`<img src="logo-${LG[k]}.png" alt="${n}"${k==3?' style="max-height:30px"':''}>`}</div><div class="sub">${s}</div>${k==2?'<div class="costat">60%</div><p>of the business, across the top four business lines</p><span class="copill">USD 10Bn gross bookings</span>':`<p>${H(d)}</p>`}</div></div>`).join('');
+document.getElementById('cando').innerHTML=CAN.map(([k,h,d],i)=>`<div class="card reveal"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${CANI[i]}</svg></span><div class="k">${k.toUpperCase()}</div><h3>${h}</h3><p>${H(d)}</p></div>`).join('');
 
 const NOTES=[
  ["Main","SaaS","Is this SaaS business healthy? 8 numbers, from NRR to burn multiple."],
@@ -402,9 +515,23 @@ const NOTES=[
  ["Manufacturing","Manufacturing","Where does margin leak on the factory floor?"],
  ["OTA","Travel platforms","Reading a travel platform: bookings are not revenue."]
 ];
-document.getElementById('notesGrid').innerHTML=NOTES.map(([f,s,d])=>`<a class="note-card reveal" id="note-${f}" href="notes/${f}.jpg" target="_blank" rel="noopener"><div class="card"><img src="notes/${f}.jpg" alt="${s} finance one-pager" loading="lazy"><div class="ni"><span class="sub">${s}</span><p>${d}</p><span class="open">View full-size →</span></div></div></a>`).join('');
-(function(){const d=document.querySelector('.nav-drop');d.querySelector(':scope>a').addEventListener('click',e=>{if(matchMedia('(hover:none)').matches||innerWidth<=960){e.preventDefault();d.classList.toggle('open')}});d.addEventListener('click',e=>{if(e.target.closest('.nav-drop-panel a'))d.classList.remove('open')});document.addEventListener('click',e=>{if(!d.contains(e.target))d.classList.remove('open')})})();
-document.getElementById('navNotes').innerHTML=NOTES.map(([f,s])=>`<a href="#note-${f}">${s}</a>`).join('');
+
+document.querySelectorAll('.st-tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.st-tab').forEach(x=>x.classList.toggle('on',x===b));document.querySelectorAll('.st-panel').forEach(p=>p.classList.toggle('on',p.id==='p-'+b.dataset.t))});
+const tabs=document.getElementById('tabs'),viewer=document.getElementById('viewer');let ni=0;
+tabs.innerHTML=NOTES.map(([f,s],i)=>`<button class="tab" data-i="${i}">${s}</button>`).join('');
+function showNote(i,scroll){ni=(i+NOTES.length)%NOTES.length;const [f,s,d]=NOTES[ni];
+  tabs.querySelectorAll('.tab').forEach((t,k)=>t.classList.toggle('on',k==ni));
+  viewer.innerHTML=`<a href="notes/${f}.jpg" target="_blank" rel="noopener" class="fade"><img src="notes/${f}.jpg" alt="${s} finance one-pager"></a>
+   <div class="vt fade"><span class="eyebrow coral">${s}</span><h3>${d}</h3>
+   <p>One page: the 8 numbers that matter, how to read each one, and where finance moves them.</p>
+   <div class="help-link"><a class="btn primary" href="notes/${f}.jpg" target="_blank" rel="noopener">Open full-size ↗</a><button class="btn ghost" id="nextNote">Next sector →</button></div></div>`;
+  document.getElementById('nextNote').onclick=()=>showNote(ni+1);
+  if(scroll)document.getElementById('notes').scrollIntoView({behavior:'smooth'});}
+tabs.addEventListener('click',e=>{const b=e.target.closest('.tab');if(b)showNote(+b.dataset.i)});
+(function(){const m=location.hash.match(/^#note-(.+)$/);const k=m?NOTES.findIndex(n=>n[0]===m[1]):-1;showNote(k>=0?k:0,k>=0)})();
+// highlight active nav link
+const navA=[...document.querySelectorAll('.navlinks a')];const secs=navA.map(a=>document.querySelector(a.getAttribute('href')));
+addEventListener('scroll',()=>{let c=-1;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<140)c=i});navA.forEach((a,i)=>a.classList.toggle('on',i==c))},{passive:true});
 
 const nodes=document.getElementById('nodes'), stage=document.getElementById('stage'), fill=document.getElementById('fill');
 nodes.innerHTML=ST.map((s,i)=>`<button class="node" role="tab" data-i="${i}" aria-label="Stage ${i+1}: ${s[2]}"><span class="dot"></span>${s[0]}</button>`).join('');
